@@ -1,0 +1,36 @@
+class MyDataset:
+    def __init__(self, args):
+        self.data_root = args.data_root
+        self.batch_size = args.batch_size
+
+arg是储存所有超参数的变量
+args.data_root  # 训练数据的路径
+args.batch_size  # 批次大小
+args.num_epochs  # 训练的轮数
+
+
+通常 args 是从 argparse 获取的：
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument('--data_root', type=str, default='/data/dataset')
+parser.add_argument('--batch_size', type=int, default=32)
+parser.add_argument('--num_epochs', type=int, default=10)
+args = parser.parse_args()  # 解析命令行参数
+dataset = MyDataset(args)
+
+
+
+将目录中的文件总结成txt文件
+find /data/home/yunxin/Forgery_CP/Data_hifi/output_data/casia -type f -name "*.npy" > /data/home/yunxin/Forgery_CP/Data_hifi/output_data/casia/fake.txt 
+
+将目录中的文件总结成txt文件
+find /data/home/yunxin/Forgery_CP/Data_hifi/output_data/columbia -type f -name "*.npy" > /data/home/yunxin/Forgery_CP/Data_hifi/output_data/columbia/vallist.txt 
+
+将目录中的文件总结成txt文件
+find /data/home/yunxin/Forgery_CP/Data_hifi/output_data/coverage -type f -name "*.npy" > /data/home/yunxin/Forgery_CP/Data_hifi/output_data/coverage/fake.txt 
+
+将目录中的文件总结成txt文件
+find /data/home/yunxin/Forgery_CP/Data_hifi/output_data/IMD2020 -type f -name "*.npy" > /data/home/yunxin/Forgery_CP/Data_hifi/output_data/IMD2020/fake.txt 
+
+将目录中的文件总结成txt文件
+find /data/home/yunxin/Forgery_CP/Data_hifi/output_data/NIST16 -type f -name "*.npy" > /data/home/yunxin/Forgery_CP/Data_hifi/output_data/NIST16/alllist.txt 
